@@ -62,6 +62,7 @@ public class User {
 	
     @Size(max=100)
 	private String createdDate;
+    
 
   @DBRef
   private Set<Role> roles = new HashSet<>();
@@ -69,13 +70,16 @@ public class User {
   private List<UserDiplome> userDiplome;
   
   private List<UserExperience> userExperience;
+  
+  @Size(max=10)
+  private String bannir = "1";
 
   public User() {
   }
 
   public User(String username, String email, String password, String nomUsers, String prenomUsers, 
 		      String posteUsers , String telUsers, String adresseUsers, String dateNaissanceUsers,
-		      String createdBy, String createdDate) {
+		      String createdBy, String createdDate, String bannir) {
     this.username = username;
     this.email = email;
     this.password = password;
@@ -87,7 +91,7 @@ public class User {
     this.dateNaissanceUsers = dateNaissanceUsers;
     this.createdBy = createdBy;
     this.createdDate = createdDate;
-    
+    this.bannir = bannir;
   }
 
   public String getId() {
@@ -211,5 +215,12 @@ public void setUserExperience(List<UserExperience> userExperience) {
 	this.userExperience = userExperience;
 }
 
-  
+public String getBannir() {
+	return bannir;
+}
+
+public void setBannir(String bannir) {
+	this.bannir = bannir;
+}
+
 }

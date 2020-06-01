@@ -45,6 +45,16 @@ public class UserController {
 		return userService.updateUsers(user);
 	}
 	
+	@PutMapping("bannirUser/{id}")
+	public User bannirUsers(@RequestBody User user) {
+		return userService.bannirUsers(user);
+	}
+	
+	@PutMapping("debannirUser/{id}")
+	public User debannirUsers(@RequestBody User user) {
+		return userService.debannirUsers(user);
+	}
+	
 	@DeleteMapping("deleteUser/{id}") 
 	public String deleteUsers(@PathVariable(value="id") @Valid String id) {
 		return userService.deleteUsers(id);

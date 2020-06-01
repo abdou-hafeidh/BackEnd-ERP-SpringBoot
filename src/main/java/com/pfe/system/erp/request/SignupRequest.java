@@ -52,6 +52,10 @@ public class SignupRequest {
 	
     private Set<String> roles;
     
+    @Size(max=10)
+	private String bannir = "1";
+    
+    
     public String getUsername() {
         return username;
     }
@@ -148,4 +152,13 @@ public class SignupRequest {
     public void setRole(Set<String> roles) {
       this.roles = roles;
     }
+
+	public String getBannir() {
+		return bannir;
+	}
+
+	public void setBannir(String bannir) {
+		this.bannir = bannir;
+	}
+       
 }

@@ -39,9 +39,12 @@ public class Client {
 	
 	@Size(max = 50)
 	private String createdBy;
+	
+	@Size(max=10)
+	private String bannir = "1";
 
 	public Client(String id, String nom_clt,  String prenom_clt, String date_nais_clt, String adresse_clt, String fix_clt,
-			 String fax_clt, String portable_clt, String email_clt, String createdBy) {
+			 String fax_clt, String portable_clt, String email_clt, String createdBy, String bannir) {
 		this.id = id;
 		this.nom_clt = nom_clt;
 		this.prenom_clt = prenom_clt;
@@ -52,6 +55,7 @@ public class Client {
 		this.portable_clt = portable_clt;
 		this.email_clt = email_clt;
 		this.createdBy = createdBy;
+		this.bannir = bannir;
 	}
 
 	public String getId() {
@@ -132,5 +136,13 @@ public class Client {
 
 	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
+	}
+	
+	public String getBannir() {
+		return bannir;
+	}
+
+	public void setBannir(String bannir) {
+		this.bannir = bannir;
 	}
 }

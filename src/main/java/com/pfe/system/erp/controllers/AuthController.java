@@ -107,7 +107,8 @@ public class AuthController {
 							 signUpRequest.getAdresseUsers(),
 							 signUpRequest.getDateNaissanceUsers(),
 							 signUpRequest.getCreatedBy(),
-							 signUpRequest.getCreatedDate());
+							 signUpRequest.getCreatedDate(),
+							 signUpRequest.getBannir());
 		Set<String> strRoles = signUpRequest.getRoles();
 		Set<Role> roles = new HashSet<>();
 

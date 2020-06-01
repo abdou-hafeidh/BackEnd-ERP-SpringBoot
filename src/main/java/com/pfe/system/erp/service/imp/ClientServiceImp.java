@@ -55,4 +55,18 @@ public class ClientServiceImp implements ClientService{
 		return clientRepository.save(clt);
 	}
 
+	@Override
+	public Client bannirClient(Client client) {
+		Client clt = clientRepository.findById(client.getId()).orElse(null);
+		clt.setBannir("0");
+		return clientRepository.save(clt);
+	}
+
+	@Override
+	public Client debannirClient(Client client) {
+		Client clt = clientRepository.findById(client.getId()).orElse(null);
+		clt.setBannir("1");
+		return clientRepository.save(clt);
+	}
+
 }

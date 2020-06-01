@@ -12,6 +12,10 @@ import org.springframework.data.domain.Page;
 public interface UserService {
 
 	public User updateUsers(User user);
+
+	public User bannirUsers(User user);
+	
+	public User debannirUsers(User user);
 	
 	public Page<User> getAllUsers(Pageable pageable);
 	

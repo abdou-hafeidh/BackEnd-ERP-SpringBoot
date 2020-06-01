@@ -44,6 +44,20 @@ public class UserServiceImp implements UserService{
 	}
 
 	@Override
+	public User bannirUsers(User user) {
+		User usr = userRepository.findById(user.getId()).orElse(null);
+		usr.setBannir("0");
+		return userRepository.save(usr);
+	}
+	
+	@Override
+	public User debannirUsers(User user) {
+		User usr = userRepository.findById(user.getId()).orElse(null);
+		usr.setBannir("1");
+		return userRepository.save(usr);
+	}
+	
+	@Override
 	public Page<User> getAllUsers(Pageable pageable) {
 				return userRepository.findAll(pageable);
 	}
@@ -66,9 +80,7 @@ public class UserServiceImp implements UserService{
 
 	@Override
 	public List<User> getUserByCreated(String id) {
-		// TODO Auto-generated method stub
 		return userRepository.findByCreatedBy(id);
 	}
-
 
 }
