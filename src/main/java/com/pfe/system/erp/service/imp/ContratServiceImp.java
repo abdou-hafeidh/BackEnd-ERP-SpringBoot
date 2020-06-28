@@ -43,6 +43,8 @@ public class ContratServiceImp implements ContratService{
 		cnt.setType_contrat(contrat.getType_contrat());
 		cnt.setDate_debut_contrat(contrat.getDate_debut_contrat());
 		cnt.setDate_fin_contrat(contrat.getDate_fin_contrat());
+		cnt.setMontant(contrat.getMontant());
+		cnt.setTypePaiement(contrat.getTypePaiement());
 		cnt.setCreatedBy(contrat.getCreatedBy());
 		return contratRepository.save(cnt);
 	}

@@ -27,16 +27,29 @@ public class Contrat {
 	private String nom_client;
 	
 	@Size(max = 50)
+	private String montant;
+	
+	@Size(max = 50)
+	private String datePaiement;
+	
+	@Size(max = 50)
+	private String typePaiement;
+		
+	@Size(max = 50)
 	private String createdBy;
 
 	public Contrat(String id, String type_contrat, String nature_contrat,
-				   String date_debut_contrat, String date_fin_contrat, String nom_client, String createdBy) {
+				   String date_debut_contrat, String date_fin_contrat, String nom_client, 
+				   String montant, String datePaiement, String typePaiement, String createdBy) {
 		this.id = id;
 		this.type_contrat = type_contrat;
 		this.nature_contrat = nature_contrat;
 		this.date_debut_contrat = date_debut_contrat;
 		this.date_fin_contrat = date_fin_contrat;
 		this.nom_client = nom_client;
+		this.montant = montant;
+		this.datePaiement = datePaiement;
+		this.typePaiement = typePaiement;
 		this.createdBy = createdBy;
 	}
 
@@ -86,6 +99,30 @@ public class Contrat {
 
 	public void setNom_client(String nom_client) {
 		this.nom_client = nom_client;
+	}
+	
+	public String getMontant() {
+		return montant;
+	}
+
+	public void setMontant(String montant) {
+		this.montant = montant;
+	}
+
+	public String getDatePaiement() {
+		return datePaiement;
+	}
+
+	public void setDatePaiement(String datePaiement) {
+		this.datePaiement = datePaiement;
+	}
+
+	public String getTypePaiement() {
+		return typePaiement;
+	}
+
+	public void setTypePaiement(String typePaiement) {
+		this.typePaiement = typePaiement;
 	}
 
 	public String getCreatedBy() {
